@@ -227,6 +227,10 @@
   "value": 3.98,
   "text": "3.98"
  },
+ "pub_kundu_hr": {
+  "value": 0.63,
+  "text": "0.63"
+ },
  "liu_cnn_hr": {
   "value": 3.681201236123299,
   "text": "3.68"
@@ -816,7 +820,7 @@
   "text": "https://github.com/SamirHossain099/radarvitals-audit"
  },
  "artifact_doi": {
-  "value": "[PENDING: artifact]",
-  "text": "[PENDING: artifact]"
+  "value": "10.5281/zenodo.23321445",
+  "text": "https://doi.org/10.5281/zenodo.23321445"
  }
 }

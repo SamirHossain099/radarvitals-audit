@@ -1,5 +1,7 @@
 # radarvitals-audit
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23321445.svg)](https://doi.org/10.5281/zenodo.23321445)
+
 Subject identity as the signal in learned radar vital-sign estimation: evaluation floors, split files and code for
 the public clinical radar dataset of Schellenberger et al. (Scientific Data 2020; 24 GHz continuous-wave radar, 30
 adults, ECG and continuous finger pressure).

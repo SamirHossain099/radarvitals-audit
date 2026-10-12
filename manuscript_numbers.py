@@ -15,7 +15,7 @@ SCEN = Path(os.environ.get("SCHELLENBERGER_ROOT", r"N:\Datasets\Schellenberger20
 
 # Published values, each from the paper's own text (references-notes.md)
 PUB = {"liu_sbp": 3.21, "liu_dbp": 2.25, "dual_sbp": 5.00, "dual_dbp": 3.96, "tridp": 4.73,
-       "maru_sbp": 4.05, "maru_dbp": 3.08, "wang_sbp": 6.52, "wang_dbp": 3.98}
+       "maru_sbp": 4.05, "maru_dbp": 3.08, "wang_sbp": 6.52, "wang_dbp": 3.98, "kundu_hr": 0.63}
 
 
 def j(n):
@@ -172,7 +172,10 @@ def main():
 
     # ---- artifact placeholders until the release exists
     put("artifact_url", "https://github.com/SamirHossain099/radarvitals-audit", "https://github.com/SamirHossain099/radarvitals-audit")
-    put("artifact_doi", "[PENDING: artifact]", "[PENDING: artifact]")
+    # concept DOI of the Zenodo archive (v0.1.0 = 10.5281/zenodo.23321446, released 2026-10-12), pinned against CITATION.cff
+    cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    doi = cff.split('doi: "')[1].split('"')[0]
+    put("artifact_doi", doi, f"https://doi.org/{doi}")
 
     (R / "manuscript_numbers.json").write_text(json.dumps(N, indent=1), encoding="utf-8")
     print(f"{len(N)} numbers written")

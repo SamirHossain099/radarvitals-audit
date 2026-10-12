@@ -103,6 +103,12 @@ def test_lookup_better_on_most_subjects(res):
     assert sum(v["subj_median_mae"] < v["cnn_mae"] for v in ps.values()) > len(ps) / 2
 
 
+def test_artifact_doi_matches_citation(res):
+    cff = (R.parent / "CITATION.cff").read_text(encoding="utf-8")
+    doi = cff.split('doi: "')[1].split('"')[0]
+    assert doi.startswith("10.5281/zenodo.") and res["manuscript_numbers"]["artifact_doi"]["value"] == doi
+
+
 def test_manuscript_numbers_consistent(res):
     N = res["manuscript_numbers"]
     assert N["rest_n"]["value"] == res["gate_vitals"]["n_windows"]
