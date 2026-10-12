@@ -819,6 +819,26 @@
   "value": "https://github.com/SamirHossain099/radarvitals-audit",
   "text": "https://github.com/SamirHossain099/radarvitals-audit"
  },
+ "es_test_80": {
+  "value": 5.8234410664550404,
+  "text": "5.82"
+ },
+ "es_test_40": {
+  "value": 5.8476414636064975,
+  "text": "5.85"
+ },
+ "es_test_5": {
+  "value": 7.281586091263657,
+  "text": "7.28"
+ },
+ "es_train_5": {
+  "value": 2.3547308943308622,
+  "text": "2.35"
+ },
+ "es_train_80": {
+  "value": 0.3826688483551187,
+  "text": "0.38"
+ },
  "artifact_doi": {
   "value": "10.5281/zenodo.23321445",
   "text": "https://doi.org/10.5281/zenodo.23321445"

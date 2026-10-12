@@ -103,6 +103,14 @@ def test_lookup_better_on_most_subjects(res):
     assert sum(v["subj_median_mae"] < v["cnn_mae"] for v in ps.values()) > len(ps) / 2
 
 
+def test_resting_subject_disjoint_is_memorisation_not_undertraining(res):
+    """Training longer fits the training subjects ever better while the held-out error stays at the median."""
+    es = j("epoch_sweep.json")
+    m, pop = es["mean"], es["pop_median"]
+    assert m["80"]["train_mae"] < 0.5 * m["5"]["train_mae"]
+    assert m["80"]["test_mae"] > 0.7 * pop and abs(m["80"]["test_mae"] - m["40"]["test_mae"]) < 1.0
+
+
 def test_artifact_doi_matches_citation(res):
     cff = (R.parent / "CITATION.cff").read_text(encoding="utf-8")
     doi = cff.split('doi: "')[1].split('"')[0]

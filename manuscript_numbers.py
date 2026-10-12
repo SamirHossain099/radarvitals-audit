@@ -172,6 +172,10 @@ def main():
 
     # ---- artifact placeholders until the release exists
     put("artifact_url", "https://github.com/SamirHossain099/radarvitals-audit", "https://github.com/SamirHossain099/radarvitals-audit")
+    es = j("epoch_sweep.json")["mean"]
+    put("es_test_80", es["80"]["test_mae"]); put("es_test_40", es["40"]["test_mae"]); put("es_test_5", es["5"]["test_mae"])
+    put("es_train_5", es["5"]["train_mae"]); put("es_train_80", es["80"]["train_mae"])
+
     # concept DOI of the Zenodo archive (v0.1.0 = 10.5281/zenodo.23321446, released 2026-10-12), pinned against CITATION.cff
     cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     doi = cff.split('doi: "')[1].split('"')[0]
