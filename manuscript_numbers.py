@@ -185,6 +185,12 @@ def main():
         st = ev[scen]["hr_stats"]
         put(f"ratio_{k}", st["within_subject_sd"] / st["across_subject_sd"], f"{st['within_subject_sd'] / st['across_subject_sd']:.2f}")
 
+    lk = j("bp_lookup_stats.json")
+    r, t = lk["random_windows_80_20/subj_median"], lk["within_subject_temporal_8_2/subj_median"]
+    for k, v in (("lk_me_sbp", r["me_sbp"]), ("lk_sd_sbp", r["sd_sbp"]), ("lk_me_dbp", r["me_dbp"]), ("lk_sd_dbp", r["sd_dbp"]),
+                 ("lk_me_sbp_t", t["me_sbp"]), ("lk_sd_sbp_t", t["sd_sbp"]), ("lk_me_dbp_t", t["me_dbp"]), ("lk_sd_dbp_t", t["sd_dbp"])):
+        put(k, v, f"{v:+.1f}" if "me" in k else f"{v:.1f}")
+
     # concept DOI of the Zenodo archive (v0.1.0 = 10.5281/zenodo.23321446, released 2026-10-12), pinned against CITATION.cff
     cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     doi = cff.split('doi: "')[1].split('"')[0]
