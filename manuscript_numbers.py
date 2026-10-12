@@ -172,9 +172,18 @@ def main():
 
     # ---- artifact placeholders until the release exists
     put("artifact_url", "https://github.com/SamirHossain099/radarvitals-audit", "https://github.com/SamirHossain099/radarvitals-audit")
-    es = j("epoch_sweep.json")["mean"]
+    ES = j("epoch_sweep.json"); es = ES["mean"]
     put("es_test_80", es["80"]["test_mae"]); put("es_test_40", es["40"]["test_mae"]); put("es_test_5", es["5"]["test_mae"])
     put("es_train_5", es["5"]["train_mae"]); put("es_train_80", es["80"]["train_mae"])
+    f80 = [f["by_epoch"]["80"]["test_mae"] for f in ES["folds"]]
+    put("es80_min", min(f80)); put("es80_max", max(f80)); put("es_pop", ES["pop_median"])
+    # per-scenario reduction of the subject-disjoint error below the population median, in percent
+    for scen, k in (("Resting", "rest"), ("Valsalva", "vals"), ("Apnea", "apn"), ("TiltUp", "tup"), ("TiltDown", "tdn"), ("all", "all")):
+        d = ev[scen]["hr"]["subject_disjoint_5fold"]
+        g = 100 * (d["pop_median"] - d["cnn"]) / d["pop_median"]
+        put(f"gain_{k}", g, f"{g:.0f}")
+        st = ev[scen]["hr_stats"]
+        put(f"ratio_{k}", st["within_subject_sd"] / st["across_subject_sd"], f"{st['within_subject_sd'] / st['across_subject_sd']:.2f}")
 
     # concept DOI of the Zenodo archive (v0.1.0 = 10.5281/zenodo.23321446, released 2026-10-12), pinned against CITATION.cff
     cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
