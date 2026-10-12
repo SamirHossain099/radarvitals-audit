@@ -1,0 +1,8 @@
+numpy
+scipy
+pandas
+scikit-learn
+torch
+matplotlib
+openpyxl
+pytest

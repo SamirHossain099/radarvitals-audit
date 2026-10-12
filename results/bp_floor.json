@@ -1,0 +1,43 @@
+{
+ "n_windows": 3064,
+ "n_subjects": 27,
+ "protocols": {
+  "random_windows_80_20": {
+   "pop_median_mae_sbp": 12.57471951303637,
+   "pop_median_mae_dbp": 10.051692121789044,
+   "subj_median_mae_sbp": 2.279499955429777,
+   "subj_median_mae_dbp": 1.5263993738996766
+  },
+  "within_subject_temporal_8_2": {
+   "pop_median_mae_sbp": 11.947864989607467,
+   "pop_median_mae_dbp": 9.057819565154407,
+   "subj_median_mae_sbp": 2.7290516575340824,
+   "subj_median_mae_dbp": 1.809433274786103
+  },
+  "subject_disjoint_5fold": {
+   "pop_median_mae_sbp": 13.450542420980792,
+   "pop_median_mae_dbp": 10.518824056252063
+  }
+ },
+ "published": {
+  "TriDP-PTM 2026 (within-subject 8:2)": {
+   "BP MAE": 4.73
+  },
+  "Liu 2026 (segment shuffle 3:1:1)": {
+   "SBP": 3.21,
+   "DBP": 2.25
+  },
+  "Dual-Stage 2025 (65/15/20, unit unspecified)": {
+   "SBP": 5.0,
+   "DBP": 3.96
+  },
+  "MARU-MTL 2026 (subject-disjoint)": {
+   "SBP": 4.05,
+   "DBP": 3.08
+  },
+  "Wang Sensors 2025 (subject-wise 5-fold)": {
+   "SBP": 6.52,
+   "DBP": 3.98
+  }
+ }
+}

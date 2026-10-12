@@ -1,0 +1,23 @@
+{
+ "hr": {
+  "ridge_demographics_mae": 6.596692694441991,
+  "pop_median_mae": 6.561884509181373
+ },
+ "sbp": {
+  "ridge_demographics_mae": 13.233351200747606,
+  "pop_median_mae": 12.878007315012635
+ },
+ "dbp": {
+  "ridge_demographics_mae": 10.327528372177998,
+  "pop_median_mae": 10.630478337992148
+ },
+ "apnea_GDN0009": {
+  "windows": 40,
+  "labelled": 40,
+  "ecg2_finite": false,
+  "ecg2_std": 0.2577589804279268,
+  "ecg1_finite": false,
+  "ecg1_std": 0.08408666018303744,
+  "lead2_alone_labelled": 40
+ }
+}

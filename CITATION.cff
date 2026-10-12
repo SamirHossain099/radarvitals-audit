@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use radarvitals-audit, please cite it as below."
+title: "radarvitals-audit: evaluation floors and split files for learned radar vital-sign estimation on the Schellenberger dataset"
+abstract: >-
+  On the public clinical radar dataset of Schellenberger et al. (24 GHz radar, 30 adults, ECG and continuous finger
+  pressure), the within-subject evaluation protocols used by learned heart-rate and blood-pressure estimators are
+  matched by a lookup of each subject's resting value, and a generic network that reaches the same errors identifies
+  the subject from a radar window with 99% accuracy. On held-out subjects the network falls to the population median
+  at rest, while the dataset authors' own classical pipeline scores 0.6 beats per minute. Pooling the five recording
+  scenarios makes subject-disjoint heart rate learnable. radarvitals-audit holds the window and label derivation,
+  every estimator and protocol, the released split files, and tests that pin every number the paper reports.
+type: software
+authors:
+  - given-names: Samir
+    family-names: Hossain
+    orcid: "https://orcid.org/0009-0003-8986-0946"
+    affiliation: "Department of Electrical and Computer Engineering, Texas Tech University"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/SamirHossain099/radarvitals-audit"
+keywords:
+  - radar vital signs
+  - heart rate
+  - blood pressure
+  - evaluation protocol
+  - data leakage
+  - subject-independent evaluation
